@@ -1,28 +1,35 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <header class="has-background-info ">
+      <h1 class="title has-text-white-bis">Vue Firebase</h1>
+      <p class="subtitle has-text-white-ter">Realtime Voice Chat</p>
+    </header>
+    <div class="body-container">
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import { auth } from './firebase';
+
+console.log(auth);
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  header {
+    margin-bottom: 15px;
+    padding: 15px;
+  }
+
+  .body-container {
+    padding: 20px;
+  }
 </style>
